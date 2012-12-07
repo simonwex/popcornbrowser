@@ -100,8 +100,13 @@ exports.updateMake = function(req, res){
 exports.next = function(req, res){
   pg.connect(env.get(env.get('DATABASE_ENV_VAR')), function(err, client){
     client.query("SELECT * FROM makes WHERE looks_like_itu IS NULL LIMIT 1", function(err, result){
-      res.writeHead(200, {'Content-Type': 'application/json'});
-      res.write(JSON.stringify(result.rows[0]));
+      if (result.rows.length > 0){
+        res.writeHead(200, {'Content-Type': 'application/json'});
+        res.write(JSON.stringify(result.rows[0]));
+      }
+      else{
+        res.writeHead(404, {'Content-Type': 'application/json'});
+      }
       res.end();
     });
   });
