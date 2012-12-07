@@ -2,7 +2,17 @@
 
 <% if (user) {%>
   <div class="row">
-    <iframe id="previewFrame" class="span12" src="" mozallowfullscreen="" webkitallowfullscreen="" allowfullscreen=""></iframe>
+    <iframe id="previewFrame" class="span7" src="" mozallowfullscreen="" webkitallowfullscreen="" allowfullscreen=""></iframe>
+    <div class="span4 pull-right">
+      <h3>Recent ITU-flagged:</h3>
+      <ul id="previousUrls" >
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <form>
+      <input class="span8" id="url" type="text" placeholder="">
+    </form>
   </div>
   <div class="row">
     <div class="span4 offset2 well">

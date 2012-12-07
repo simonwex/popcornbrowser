@@ -48,12 +48,26 @@ $(function(){
     var currentKey = null;
     function loadNextInPreview(){
       $.getJSON('/next', function(data){
-        frame.attr('src', 'http://popcorn.webmadecontent.org/' + data.key);
+        var url = 'http://popcorn.webmadecontent.org/' + data.key;
+        frame.attr('src', url);
+        $('#url').val(url);
         currentKey = data.key;
       });
     }
 
     function save(isItu){
+      if (isItu){
+        var a = $('<a>');
+        var li = $('<li>');
+        li.append(a);
+        var url = 'http://popcorn.webmadecontent.org/' + currentKey;
+        a.text(url);
+        a.attr('href', url);
+        $('#previousUrls').prepend(li);
+        while($('#previousUrls li').length > 12){
+          $('#previousUrls li').last().remove();
+        }
+      }
       $.ajax({
         type: 'POST',
         url: '/make',

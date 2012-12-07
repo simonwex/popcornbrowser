@@ -8,3 +8,7 @@ body {
   width: 560px;
   height: 383px;
 }
+
+ul {
+  list-style-type: none;
+}
