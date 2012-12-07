@@ -7,7 +7,7 @@
     "express": "latest",
     "socket.io": "latest",
     "redis": "latest",
-    "connect": "~2.7.1",
+    "connect": "git://github.com/senchalabs/connect.git",
     "connect-redis": "latest",
     "sha1": "latest",
     "winston": "latest",
