@@ -7,7 +7,7 @@
     "express": "latest",
     "socket.io": "latest",
     "redis": "latest",
-    "connect": "latest",
+    "connect": "~2.7.1",
     "connect-redis": "latest",
     "sha1": "latest",
     "winston": "latest",
@@ -24,6 +24,7 @@
   "devDependencies": {},
   "optionalDependencies": {},
   "engine": {
-    "node": ">=0.8"
+    "node": ">=0.8",
+    "npm":  "1.1.x"
   }
 }
