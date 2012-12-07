@@ -7,7 +7,7 @@ logger           = require('./../../../lib/logger'),
 knox             = require('knox'),
 getUser          = require('../helpers/application').user,
 env              = require('./../../../lib/environment'),
-pg               = require('pg').native, 
+pg               = require('pg'),
 s3               = knox.createClient({
                     key: env.get('AWS_ACCESS_KEY_ID'),
                     secret: env.get('AWS_SECRET_ACCESS_KEY'),
