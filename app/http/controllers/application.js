@@ -8,8 +8,10 @@ exports.allowCorsRequests = function(req, resp){
 };
 
 exports.authenticate = function(req, res, next){
-  if (req.session.email == 'swex@mozilla.com') { return next(); }
-  if (req.session.email == 'geoffrey@mozillafoundation.org') { return next(); }
+  var domain = req.session.email.split("@").pop();
+  if (['mozilla.com', 'mozillafoundation.org'].indexOf(domain) >= 0){
+    return next();
+  }
 
   res.redirect('/');
 }
