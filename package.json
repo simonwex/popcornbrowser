@@ -1,0 +1,29 @@
+{
+  "author": " <swex@mozilla.com>",
+  "name": "itubrowser",
+  "version": "0.0.0",
+  "dependencies": {
+    "express-browserid": "latest",
+    "express": "latest",
+    "socket.io": "latest",
+    "redis": "latest",
+    "connect": "latest",
+    "connect-redis": "latest",
+    "sha1": "latest",
+    "winston": "latest",
+    "ejs": "latest",
+    "semver": "latest",
+    "cjson": "latest",
+    "habitat": "latest",
+    "redis-url": "latest",
+    "express-persona": "latest",
+    "ejs-locals": "~1.0.2",
+    "knox": "latest",
+    "pg": "~0.7.2"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engine": {
+    "node": ">=0.8"
+  }
+}

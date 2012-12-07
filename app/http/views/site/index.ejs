@@ -1,0 +1,18 @@
+<% layout('../layout.ejs') -%>
+
+<% if (user) {%>
+  <div class="row">
+    <iframe id="previewFrame" class="span12" src="" mozallowfullscreen="" webkitallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+  <div class="row">
+    <div class="span4 offset2 well">
+      <div class="row">
+        <button id="yes" class="span2 btn btn-primary" type="button"><i class="icon-thumbs-up icon-white"></i> ITU</button>
+        <button id="no" class="span2 btn" type="button"><i class="icon-thumbs-down"></i> Go Away</button>
+      </div>
+    </div>
+  </div>
+<% } else { %> 
+  <h1>Popcorn Browser</h1>
+  <p>You must authenticate before you do anything interesting</p>
+<% } %>

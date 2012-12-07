@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS makes;
+CREATE TABLE makes (
+  key             varchar(255) NOT NULL,
+  looks_like_itu  boolean default null,
+  created_at      date,
+  PRIMARY KEY (key),
+  UNIQUE (key)
+);
+
+CREATE INDEX makes_created_at ON makes(created_at);
+CREATE INDEX makes_looks_like_itu ON makes(looks_like_itu);
