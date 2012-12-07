@@ -44,8 +44,8 @@ function list(marker, cb){
         var keys = [];
         var placeholders = [];
         for(var i in contents){
+          lastKey = contents[i].Key;
           if (lastKey.indexOf("user_images") < 0){
-            lastKey = contents[i].Key;
             keys.push(lastKey);
             
             placeholders.push("($" + (placeholders.length + 1) + ")");
