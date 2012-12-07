@@ -73,6 +73,7 @@ routes = {
 http.get( '/',                                  routes.site.index);
 http.get( '/refresh', application.authenticate, routes.site.refresh);
 http.get( '/next',    application.authenticate, routes.site.next);
+http.get( '/flagged', application.authenticate, routes.site.flagged);
 http.post('/make',    application.authenticate, routes.site.updateMake);
 
 process.on('uncaughtException', function(err) {

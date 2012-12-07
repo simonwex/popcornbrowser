@@ -112,3 +112,17 @@ exports.next = function(req, res){
   });
 }
 
+exports.flagged = function(req, res){
+  pg.connect(env.get(env.get('DATABASE_ENV_VAR')), function(err, client){
+    client.query(
+      "SELECT key FROM MAKES WHERE looks_like_itu = true",
+      function(err, result){
+        var urls = [];
+        for (var i in result.rows){
+          urls.push(result.rows[i].key);
+        }
+        res.render('site/flagged', { user: getUser(req), 'urls': urls});
+      }
+    );
+  });
+}

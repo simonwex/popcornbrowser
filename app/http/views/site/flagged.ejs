@@ -1,0 +1,8 @@
+<% layout('../layout.ejs') -%>
+
+<h1>ITU-Flagged Makes:</h1>
+<ul>
+  <% for (var i in urls){ %>
+  <li><a href="http://popcorn.webmadecontent.org/<%= urls[i]%>">http://popcorn.webmadecontent.org/<%= urls[i]%></a></li>
+  <% } %>
+</ul>
