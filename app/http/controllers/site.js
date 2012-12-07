@@ -31,7 +31,7 @@ function list(marker, cb){
     opts['marker'] = marker;
   }
 
-  pg.connect(env.get('DATABASE_URL'), function(err, client){
+  pg.connect(env.get(env.get('DATABASE_ENV_VAR')), function(err, client){
     s3.list(opts, function(err, data){
       if (err){
         logger.error(err);
@@ -84,7 +84,7 @@ exports.refresh = function(req, res){
 }
 
 exports.updateMake = function(req, res){
-  pg.connect(env.get('DATABASE_URL'), function(err, client){
+  pg.connect(env.get(env.get('DATABASE_ENV_VAR')), function(err, client){
     client.query(
       "UPDATE makes SET looks_like_itu = $1 WHERE key = $2", 
       [(req.body.looksLikeITU == 'true'), req.body.key], 
@@ -98,7 +98,7 @@ exports.updateMake = function(req, res){
 }
 
 exports.next = function(req, res){
-  pg.connect(env.get('DATABASE_URL'), function(err, client){
+  pg.connect(env.get(env.get('DATABASE_ENV_VAR')), function(err, client){
     client.query("SELECT * FROM makes WHERE looks_like_itu IS NULL LIMIT 1", function(err, result){
       res.writeHead(200, {'Content-Type': 'application/json'});
       res.write(JSON.stringify(result.rows[0]));
